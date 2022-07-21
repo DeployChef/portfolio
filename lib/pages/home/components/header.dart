@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/models/header_item.dart';
 import 'package:portfolio/utils/constants.dart';
+import 'package:portfolio/utils/screen_helper.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
 List<HeaderItem> headerItems = [
@@ -118,15 +119,25 @@ class Header extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      child: ScreenHelper(
+        desktop: Padding(
+          padding: EdgeInsets.symmetric(vertical: 8),
+          child: buildHeader(),
+        ),
+        tablet: buildHeader(),
+        mobile: SizedBox(),
+      ),
+    );
+  }
+
+  Widget buildHeader() {
+    return Container(
       padding: EdgeInsets.symmetric(
         horizontal: 16,
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          HeaderLogo(),
-          HeaderRow()
-        ],
+        children: [HeaderLogo(), HeaderRow()],
       ),
     );
   }
