@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/models/header_item.dart';
 import 'package:portfolio/utils/constants.dart';
+import 'package:portfolio/utils/globals.dart';
 import 'package:portfolio/utils/screen_helper.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
@@ -34,25 +35,25 @@ class HeaderRow extends StatelessWidget {
             .map((item) => item.isButton
                 ? MouseRegion(
                     cursor: SystemMouseCursors.click,
-                    child: Container(
-                      decoration: BoxDecoration(
-                        color: kDangerColor,
-                        borderRadius: BorderRadius.circular(8),
-                      ),
-                      padding: EdgeInsets.symmetric(
-                        horizontal: 20,
-                        vertical: 5,
-                      ),
-                      child: TextButton(
-                        child: Text(
-                          item.title,
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 13,
-                            fontWeight: FontWeight.bold,
-                          ),
+                    child: SizedBox(
+                      width: 100,
+                      height: 40,
+                      child: Container(
+                        decoration: BoxDecoration(
+                          color: kDangerColor,
+                          borderRadius: BorderRadius.circular(8),
                         ),
-                        onPressed: item.onTap,
+                        child: TextButton(
+                          child: Text(
+                            item.title,
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 13,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          onPressed: item.onTap,
+                        ),
                       ),
                     ),
                   )
@@ -139,7 +140,9 @@ class Header extends StatelessWidget {
           children: [
             HeaderLogo(),
             GestureDetector(
-              onTap: () {},
+              onTap: () {
+                Globals.scaffoldKey.currentState?.openEndDrawer();
+              },
               child: Icon(
                 Icons.menu_rounded,
                 color: Colors.white,
