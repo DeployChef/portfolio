@@ -125,7 +125,29 @@ class Header extends StatelessWidget {
           child: buildHeader(),
         ),
         tablet: buildHeader(),
-        mobile: SizedBox(),
+        mobile: buildMobileHeader(),
+      ),
+    );
+  }
+
+  Widget buildMobileHeader() {
+    return SafeArea(
+      child: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 16),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            HeaderLogo(),
+            GestureDetector(
+              onTap: () {},
+              child: Icon(
+                Icons.menu_rounded,
+                color: Colors.white,
+                size: 28,
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
