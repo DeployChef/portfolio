@@ -55,34 +55,7 @@ class CvSection extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(
-                "BETTER CODING,\nBETTER EXPERIENCES",
-                style: GoogleFonts.oswald(
-                  color: Colors.white,
-                  fontWeight: FontWeight.w900,
-                  height: 1.8,
-                  fontSize: 18,
-                ),
-              ),
-              GestureDetector(
-                onTap: () {},
-                child: MouseRegion(
-                  cursor: SystemMouseCursors.click,
-                  child: Text(
-                    "DOWNLOAD CV",
-                    style: GoogleFonts.oswald(
-                      color: kPrimaryColor,
-                      fontWeight: FontWeight.w900,
-                      fontSize: 16,
-                    ),
-                  ),
-                ),
-              ),
-            ],
-          ),
+          //_buildDownloadCv(),
           const SizedBox(height: 50),
           Container(
             child: LayoutBuilder(
@@ -128,11 +101,14 @@ class CvSection extends StatelessWidget {
                           ],
                         ),
                         SizedBox(height: 15),
-                        Text(item.subTitle, style: TextStyle(
-                          color: kCaptionColor,
-                          height: 1.5,
-                          fontSize: 14,
-                        ),)
+                        Text(
+                          item.subTitle,
+                          style: TextStyle(
+                            color: kCaptionColor,
+                            height: 1.5,
+                            fontSize: 14,
+                          ),
+                        )
                       ],
                     ),
                   );
@@ -142,6 +118,37 @@ class CvSection extends StatelessWidget {
           )
         ],
       ),
+    );
+  }
+
+  Row _buildDownloadCv() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Text(
+          "BETTER CODING,\nBETTER EXPERIENCES",
+          style: GoogleFonts.oswald(
+            color: Colors.white,
+            fontWeight: FontWeight.w900,
+            height: 1.8,
+            fontSize: 18,
+          ),
+        ),
+        GestureDetector(
+          onTap: () {},
+          child: MouseRegion(
+            cursor: SystemMouseCursors.click,
+            child: Text(
+              "DOWNLOAD CV",
+              style: GoogleFonts.oswald(
+                color: kPrimaryColor,
+                fontWeight: FontWeight.w900,
+                fontSize: 16,
+              ),
+            ),
+          ),
+        ),
+      ],
     );
   }
 }
