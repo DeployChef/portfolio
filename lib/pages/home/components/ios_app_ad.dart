@@ -33,7 +33,10 @@ class IosAppAd extends StatelessWidget {
               children: [
                 Expanded(
                   flex: constraints.maxWidth > 720 ? 1 : 0,
-                  child: Image.asset("assets/ios.png"),
+                  child: Image.asset(
+                    "assets/ios.png",
+                    width: constraints.maxWidth > 720 ? null : 350,
+                  ),
                 ),
                 Expanded(
                   flex: constraints.maxWidth > 720 ? 1 : 0,
