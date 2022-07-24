@@ -81,7 +81,7 @@ class IosAppAd extends StatelessWidget {
                                 borderRadius: BorderRadius.circular(8),
                               ),
                               height: 48,
-                              width: 170,
+                              width: 150,
                               child: TextButton(
                                 onPressed: () {},
                                 child: Text(
