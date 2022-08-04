@@ -92,7 +92,7 @@ List<CarouselItemModel> carouselItems = List.generate(
     ),
     image: Container(
       child: Image.asset(
-        "assets/person.png",
+        "assets/person2.png",
         fit: BoxFit.contain,
       ),
     ),
