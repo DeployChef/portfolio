@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/pages/home/components/carousel.dart';
 import 'package:portfolio/pages/home/components/cv_section.dart';
+import 'package:portfolio/pages/home/components/footer.dart';
 import 'package:portfolio/pages/home/components/header.dart';
 import 'package:portfolio/pages/home/components/ios_app_ad.dart';
 import 'package:portfolio/pages/home/components/website_ad.dart';
@@ -77,6 +78,8 @@ class Home extends StatelessWidget {
               IosAppAd(),
               SizedBox(height: 70),
               WebsiteAd(),
+              SizedBox(height: 140),
+              Footer()
             ],
           ),
         ),

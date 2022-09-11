@@ -1,9 +1,13 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:lottie/lottie.dart';
 import 'package:portfolio/models/header_item.dart';
 import 'package:portfolio/utils/constants.dart';
 import 'package:portfolio/utils/globals.dart';
 import 'package:portfolio/utils/screen_helper.dart';
+import 'package:provider/provider.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
 List<HeaderItem> headerItems = [
@@ -11,8 +15,7 @@ List<HeaderItem> headerItems = [
   HeaderItem(title: "MY INTRO", onTap: () {}),
   HeaderItem(title: "SERVICES", onTap: () {}),
   HeaderItem(title: "PORTFOLIO", onTap: () {}),
-  HeaderItem(title: "TESTIMONIALS", onTap: () {}),
-  HeaderItem(title: "BLOGS", onTap: () {}),
+  //HeaderItem(title: "BLOGS", onTap: () {}),
   HeaderItem(
     title: "HIRE ME",
     isButton: true,
@@ -85,30 +88,104 @@ class HeaderLogo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: MouseRegion(
-        child: GestureDetector(
-          onTap: () {},
-          child: RichText(
-            text: TextSpan(children: [
-              TextSpan(
-                  text: "DC",
-                  style: GoogleFonts.oswald(
-                    color: Colors.white,
-                    fontSize: 32.0,
-                    fontWeight: FontWeight.bold,
-                  )),
-              TextSpan(
-                  text: ".",
-                  style: GoogleFonts.oswald(
-                    color: kPrimaryColor,
-                    fontSize: 36,
-                    fontWeight: FontWeight.bold,
-                  )),
-            ]),
+    return Row(
+      children: [
+        Container(
+          child: MouseRegion(
+            child: GestureDetector(
+              onTap: () {},
+              child: RichText(
+                text: TextSpan(children: [
+                  TextSpan(
+                      text: "DC",
+                      style: GoogleFonts.oswald(
+                        color: Colors.white,
+                        fontSize: 32.0,
+                        fontWeight: FontWeight.bold,
+                      )),
+                  TextSpan(
+                      text: ".",
+                      style: GoogleFonts.oswald(
+                        color: kPrimaryColor,
+                        fontSize: 36,
+                        fontWeight: FontWeight.bold,
+                      )),
+                ]),
+              ),
+            ),
+            cursor: SystemMouseCursors.click,
           ),
         ),
-        cursor: SystemMouseCursors.click,
+        SizedBox(
+          width: 10,
+        ),
+        DarkLightSwitch(),
+      ],
+    );
+  }
+}
+
+class DarkLightSwitch extends StatefulWidget {
+  DarkLightSwitch({Key? key}) : super(key: key);
+
+  @override
+  State<DarkLightSwitch> createState() => _DarkLightSwitchState();
+}
+
+class _DarkLightSwitchState extends State<DarkLightSwitch> with SingleTickerProviderStateMixin {
+  late AnimationController _controller;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = AnimationController(
+      vsync: this,
+      duration: Duration(
+        seconds: 1,
+      ),
+    );
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Consumer<ValueNotifier<bool>>(
+      builder: (context, darkTheme, child) => Row(
+        children: [
+          MouseRegion(
+            cursor: SystemMouseCursors.click,
+            child: GestureDetector(
+              onTap: () {
+                darkTheme.value = !darkTheme.value;
+                if (darkTheme.value) {
+                  _controller.forward();
+                } else {
+                  _controller.reverse();
+                }
+              },
+              child: Lottie.asset(
+                "assets/dark-light.json",
+                repeat: false,
+                height: 40,
+                frameRate: FrameRate(100),
+                controller: _controller,
+                onLoaded: (composition) {
+                  _controller.duration = composition.duration;
+                  if (darkTheme.value) {
+                    _controller.forward();
+                  } else {
+                    _controller.reverse();
+                  }
+                },
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }

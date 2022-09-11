@@ -11,8 +11,7 @@ class Carousel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var carouselContainerHeight = MediaQuery.of(context).size.height *
-        (ScreenHelper.isMobile(context) ? .7 : .85);
+    var carouselContainerHeight = MediaQuery.of(context).size.height * (ScreenHelper.isMobile(context) ? .7 : .85);
 
     return Container(
       height: carouselContainerHeight,
@@ -28,8 +27,7 @@ class Carousel extends StatelessWidget {
                 carouselItems.length,
                 (index) => Builder(
                   builder: (context) => Container(
-                    constraints:
-                        BoxConstraints(minHeight: carouselContainerHeight),
+                    constraints: BoxConstraints(minHeight: carouselContainerHeight),
                     child: ScreenHelper(
                       desktop: _buildDesktop(
                         context,
@@ -90,8 +88,7 @@ class Carousel extends StatelessWidget {
 
   Widget _buildMobile(BuildContext context, Widget text, Widget image) {
     return Container(
-      constraints:
-          BoxConstraints(maxWidth: MediaQuery.of(context).size.width * .8),
+      constraints: BoxConstraints(maxWidth: MediaQuery.of(context).size.width * .8),
       width: double.infinity,
       child: text,
     );
