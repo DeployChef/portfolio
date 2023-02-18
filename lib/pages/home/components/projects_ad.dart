@@ -4,8 +4,8 @@ import 'package:portfolio/utils/constants.dart';
 import 'package:portfolio/utils/screen_helper.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
-class IosAppAd extends StatelessWidget {
-  const IosAppAd({Key? key}) : super(key: key);
+class ProjectsAd extends StatelessWidget {
+  const ProjectsAd({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -20,6 +20,8 @@ class IosAppAd extends StatelessWidget {
   }
 
   Widget _buildUi(BuildContext context, double width) {
+    Color color = Theme.of(context).primaryColor;
+    bool darkModeOn = color.value == kPrimaryColor.value;
     return Center(
       child: LayoutBuilder(
         builder: (_context, constraints) => ResponsiveWrapper(
@@ -28,13 +30,12 @@ class IosAppAd extends StatelessWidget {
           defaultScale: false,
           child: Container(
             child: Flex(
-              direction:
-                  constraints.maxWidth > 720 ? Axis.horizontal : Axis.vertical,
+              direction: constraints.maxWidth > 720 ? Axis.horizontal : Axis.vertical,
               children: [
                 Expanded(
                   flex: constraints.maxWidth > 720 ? 1 : 0,
                   child: Image.asset(
-                    "assets/ios.png",
+                    darkModeOn ? "assets/shresh_project_dark.png" : "assets/shresh_project_light.png",
                     width: constraints.maxWidth > 720 ? null : 350,
                   ),
                 ),
@@ -45,11 +46,8 @@ class IosAppAd extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        "IOS APP",
-                        style: GoogleFonts.oswald(
-                            color: kPrimaryColor,
-                            fontWeight: FontWeight.w900,
-                            fontSize: 16),
+                        "PROJECTS",
+                        style: GoogleFonts.oswald(color: kPrimaryColor, fontWeight: FontWeight.w900, fontSize: 16),
                       ),
                       SizedBox(height: 15),
                       Text(
@@ -99,9 +97,7 @@ class IosAppAd extends StatelessWidget {
                           MouseRegion(
                             cursor: SystemMouseCursors.click,
                             child: Container(
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(8),
-                                  border: Border.all(color: kPrimaryColor)),
+                              decoration: BoxDecoration(borderRadius: BorderRadius.circular(8), border: Border.all(color: kPrimaryColor)),
                               height: 48,
                               width: 120,
                               child: TextButton(

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/models/carousel_item_model.dart';
 import 'package:portfolio/utils/constants.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 List<CarouselItemModel> carouselItems = List.generate(
   5,
@@ -13,7 +14,7 @@ List<CarouselItemModel> carouselItems = List.generate(
         mainAxisSize: MainAxisSize.min,
         children: [
           Text(
-            ".Net / Flutter Developer",
+            "C# .Net / Flutter Developer",
             style: GoogleFonts.oswald(
               color: kPrimaryColor,
               fontSize: 16,
@@ -48,7 +49,9 @@ List<CarouselItemModel> carouselItems = List.generate(
                   ),
                 ),
                 GestureDetector(
-                  onTap: () {},
+                  onTap: () async {
+                    await launchUrlString('https://t.me/devchef');
+                  },
                   child: MouseRegion(
                     cursor: SystemMouseCursors.click,
                     child: Text(
@@ -65,27 +68,27 @@ List<CarouselItemModel> carouselItems = List.generate(
             ),
           ),
           SizedBox(height: 25),
-          MouseRegion(
-            cursor: SystemMouseCursors.click,
-            child: Container(
-              decoration: BoxDecoration(
-                color: kPrimaryColor,
-                borderRadius: BorderRadius.circular(8),
-              ),
-              height: 48,
-              child: TextButton(
-                onPressed: () {},
-                child: Text(
-                  "GET STARTED",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 13,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ),
-            ),
-          ),
+          // MouseRegion(
+          //   cursor: SystemMouseCursors.click,
+          //   child: Container(
+          //     decoration: BoxDecoration(
+          //       color: kPrimaryColor,
+          //       borderRadius: BorderRadius.circular(8),
+          //     ),
+          //     height: 48,
+          //     child: TextButton(
+          //       onPressed: () {},
+          //       child: Text(
+          //         "GET STARTED",
+          //         style: TextStyle(
+          //           color: Colors.white,
+          //           fontSize: 13,
+          //           fontWeight: FontWeight.bold,
+          //         ),
+          //       ),
+          //     ),
+          //   ),
+          // ),
         ],
       ),
     ),

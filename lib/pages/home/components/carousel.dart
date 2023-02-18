@@ -11,7 +11,7 @@ class Carousel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var carouselContainerHeight = MediaQuery.of(context).size.height * (ScreenHelper.isMobile(context) ? .7 : .85);
+    var carouselContainerHeight = MediaQuery.of(context).size.height * (ScreenHelper.isMobile(context) ? .6 : .75);
 
     return Container(
       height: carouselContainerHeight,

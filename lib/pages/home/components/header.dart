@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
@@ -9,17 +7,21 @@ import 'package:portfolio/utils/globals.dart';
 import 'package:portfolio/utils/screen_helper.dart';
 import 'package:provider/provider.dart';
 import 'package:responsive_framework/responsive_framework.dart';
+import 'package:url_launcher/url_launcher.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 List<HeaderItem> headerItems = [
   HeaderItem(title: "HOME", onTap: () {}),
-  HeaderItem(title: "MY INTRO", onTap: () {}),
-  HeaderItem(title: "SERVICES", onTap: () {}),
-  HeaderItem(title: "PORTFOLIO", onTap: () {}),
+  // HeaderItem(title: "MY INTRO", onTap: () {}),
+  // HeaderItem(title: "SERVICES", onTap: () {}),
+  // HeaderItem(title: "PORTFOLIO", onTap: () {}),
   //HeaderItem(title: "BLOGS", onTap: () {}),
   HeaderItem(
     title: "HIRE ME",
     isButton: true,
-    onTap: () {},
+    onTap: () async {
+      await launchUrlString('https://t.me/devchef');
+    },
   ),
 ];
 
@@ -28,6 +30,7 @@ class HeaderRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var theme = Theme.of(context);
     return ResponsiveVisibility(
       visible: false,
       visibleWhen: [
@@ -43,7 +46,7 @@ class HeaderRow extends StatelessWidget {
                       height: 40,
                       child: Container(
                         decoration: BoxDecoration(
-                          color: kDangerColor,
+                          color: theme.accentColor,
                           borderRadius: BorderRadius.circular(8),
                         ),
                         child: TextButton(

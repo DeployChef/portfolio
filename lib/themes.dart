@@ -9,10 +9,11 @@ class AppTheme {
 
     return base.copyWith(
       platform: TargetPlatform.android,
-      scaffoldBackgroundColor: Colors.amber,
-      primaryColor: Colors.amber,
-      canvasColor: Colors.amber,
-      textTheme: GoogleFonts.latoTextTheme(),
+      scaffoldBackgroundColor: kBackgroundColor2,
+      primaryColor: kPrimaryColor2,
+      canvasColor: kBackgroundColor2,
+      accentColor: kDangerColor2,
+      textTheme: GoogleFonts.latoTextTheme().copyWith(headline2: TextStyle(color: Colors.red)),
     );
   }
 
@@ -25,6 +26,7 @@ class AppTheme {
       scaffoldBackgroundColor: kBackgroundColor,
       primaryColor: kPrimaryColor,
       canvasColor: kBackgroundColor,
+      accentColor: kDangerColor,
       textTheme: GoogleFonts.latoTextTheme(),
     );
   }
