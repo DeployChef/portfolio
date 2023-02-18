@@ -84,7 +84,7 @@ class UpnovaAd extends StatelessWidget {
           ),
           SizedBox(height: 15),
           Text(
-            "WEBSTUDIO\nUPDATERS AND DESIGNS",
+            "UPNOVA TEAM\nDEVELOPING UPDATERS",
             style: GoogleFonts.oswald(
               color: Colors.white,
               fontWeight: FontWeight.w900,
@@ -94,7 +94,7 @@ class UpnovaAd extends StatelessWidget {
           ),
           SizedBox(height: 10),
           Text(
-            "Web and developing studio founder.\nCreating great designs and developing multifunctionals launchers/updaters for any games and applications.\nMore than 200+ updaters have already been developed.",
+            "Developing studio founder.\nCreating great designs and developing multifunctionals launchers/updaters for any games and applications.\nMore than 200+ updaters have already been developed.",
             style: TextStyle(
               color: kCaptionColor,
               height: 1.5,

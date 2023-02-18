@@ -6,6 +6,7 @@ import 'package:portfolio/pages/home/components/header.dart';
 import 'package:portfolio/pages/home/components/projects_ad.dart';
 import 'package:portfolio/pages/home/components/stats.dart';
 import 'package:portfolio/pages/home/components/upnova_ad.dart';
+import 'package:portfolio/pages/home/components/watch_ad.dart';
 import 'package:portfolio/pages/home/components/work_with.dart';
 import 'package:portfolio/utils/constants.dart';
 import 'package:portfolio/utils/globals.dart';
@@ -79,7 +80,7 @@ class Home extends StatelessWidget {
               Stats(),
               SizedBox(height: 70),
               CvSection(),
-              ProjectsAd(),
+              WatchAd(),
               SizedBox(height: 70),
               UpnovaAd(),
               SizedBox(height: 70),
