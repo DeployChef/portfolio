@@ -8,12 +8,25 @@ class AppTheme {
     final base = ThemeData.light();
 
     return base.copyWith(
-      platform: TargetPlatform.android,
+      primaryColor: kBackgroundColor,
+      accentColor: kPrimaryColor,
       scaffoldBackgroundColor: kBackgroundColor2,
-      primaryColor: kPrimaryColor2,
-      canvasColor: kBackgroundColor2,
-      accentColor: kDangerColor2,
-      textTheme: GoogleFonts.latoTextTheme().copyWith(headline2: TextStyle(color: Colors.red)),
+      colorScheme: const ColorScheme.light(
+        secondary: Colors.lightBlue,
+        // on light theme surface = Colors.white by default
+        shadow: Colors.grey,
+        inversePrimary: Colors.black,
+      ),
+      backgroundColor: Colors.white,
+      iconTheme: const IconThemeData(color: kBodyTextColorLight),
+      accentIconTheme: IconThemeData(color: kAccentIconLightColor),
+      primaryIconTheme: IconThemeData(color: Colors.blue),
+      textTheme: GoogleFonts.latoTextTheme().copyWith(
+        bodyText1: const TextStyle(color: kBodyTextColorLight),
+        bodyText2: const TextStyle(color: kBodyTextColorLight),
+        headline4: const TextStyle(color: kBodyTextColorLight, fontSize: 32),
+        headline1: const TextStyle(color: Colors.blue, fontSize: 80),
+      ),
     );
   }
 
@@ -22,12 +35,25 @@ class AppTheme {
     final base = ThemeData.dark();
 
     return base.copyWith(
-      platform: TargetPlatform.android,
-      scaffoldBackgroundColor: kBackgroundColor,
       primaryColor: kPrimaryColor,
-      canvasColor: kBackgroundColor,
       accentColor: kDangerColor,
-      textTheme: GoogleFonts.latoTextTheme(),
+      scaffoldBackgroundColor: kBackgroundDarkColor,
+      colorScheme: ColorScheme.light(
+        secondary: Colors.red,
+        surface: kSurfaceDarkColor,
+        shadow: Colors.black,
+        inversePrimary: Colors.white,
+      ),
+      backgroundColor: kBackgroundDarkColor,
+      iconTheme: const IconThemeData(color: kBodyTextColorDark),
+      accentIconTheme: IconThemeData(color: kAccentIconDarkColor),
+      primaryIconTheme: IconThemeData(color: Colors.white),
+      textTheme: GoogleFonts.latoTextTheme().copyWith(
+        bodyText1: const TextStyle(color: kBodyTextColorLight),
+        bodyText2: const TextStyle(color: kBodyTextColorLight),
+        headline4: const TextStyle(color: kBodyTextColorLight, fontSize: 32),
+        headline1: const TextStyle(color: Colors.blue, fontSize: 80),
+      ),
     );
   }
 }

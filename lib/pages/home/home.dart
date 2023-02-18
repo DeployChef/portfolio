@@ -81,7 +81,7 @@ class Home extends StatelessWidget {
               SizedBox(height: 70),
               CvSection(),
               WatchAd(),
-              SizedBox(height: 70),
+              SizedBox(height: 20),
               UpnovaAd(),
               SizedBox(height: 70),
               WorkWith(),

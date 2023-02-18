@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:portfolio/pages/home/components/analog_watch.dart';
 import 'package:portfolio/utils/constants.dart';
 import 'package:portfolio/utils/screen_helper.dart';
 import 'package:responsive_framework/responsive_framework.dart';
@@ -34,9 +35,10 @@ class WatchAd extends StatelessWidget {
               children: [
                 Expanded(
                   flex: constraints.maxWidth > 720 ? 1 : 0,
-                  child: Image.asset(
-                    darkModeOn ? "assets/shresh_project_dark.png" : "assets/shresh_project_light.png",
+                  child: Container(
                     width: constraints.maxWidth > 720 ? null : 350,
+                    padding: EdgeInsets.symmetric(vertical: 40),
+                    child: Center(child: AnalogWatch()),
                   ),
                 ),
                 Expanded(

@@ -7,28 +7,24 @@ import 'package:responsive_framework/responsive_framework.dart';
 
 final List<DevelopProcess> designProcesses = [
   DevelopProcess(
-    title: "DEVELOPING",
-    imagePath: "assets/design.png",
-    subTitle:
-        "A full stack allround developer A full stack allround A full stack allround A full stack allround",
-  ),
-  DevelopProcess(
-    title: "DEVELOPING",
+    title: "BACK END",
     imagePath: "assets/develop.png",
-    subTitle:
-        "A full stack allround B A full stack allround B A full stack allround B A full stack allround B",
+    subTitle: "Reliable service solutions on .NET6 framework for any tasks. Cloud and CI CD integration",
   ),
   DevelopProcess(
-    title: "DEVELOPING",
-    imagePath: "assets/write.png",
-    subTitle:
-        "A full stack allround C A full stack allround A full stack allround A full stack allround",
+    title: "FRONT END",
+    imagePath: "assets/design.png",
+    subTitle: "Mobile applications and fat-clients on Flutter for your business",
   ),
   DevelopProcess(
-    title: "DEVELOPING",
+    title: "ARCHITECTURE",
     imagePath: "assets/promote.png",
-    subTitle:
-        "A full stack allround D A full stack allround A full stack allround A full stack allround",
+    subTitle: "Architectural solutions from monolithic solution to microservice enterprise architecture",
+  ),
+  DevelopProcess(
+    title: "TEAM LEADING",
+    imagePath: "assets/write.png",
+    subTitle: "Development team management, backlog validation, decision making to achieve the best result",
   ),
 ];
 
@@ -67,13 +63,8 @@ class CvSection extends StatelessWidget {
                 gridDelegate: ResponsiveGridDelegate(
                   mainAxisSpacing: 20,
                   crossAxisSpacing: 20,
-                  maxCrossAxisExtent: ScreenHelper.isTablet(context) ||
-                          ScreenHelper.isMobile(context)
-                      ? constraints.maxWidth / 2
-                      : 250,
-                  childAspectRatio: ScreenHelper.isDesktop(context)
-                      ? 1
-                      : MediaQuery.of(context).size.aspectRatio * 1.5,
+                  maxCrossAxisExtent: ScreenHelper.isTablet(context) || ScreenHelper.isMobile(context) ? constraints.maxWidth / 2 : 250,
+                  childAspectRatio: ScreenHelper.isDesktop(context) ? 1 : MediaQuery.of(context).size.aspectRatio * 1.5,
                 ),
                 itemCount: designProcesses.length,
                 itemBuilder: (context, index) {
