@@ -49,7 +49,7 @@ class WatchAd extends StatelessWidget {
                     children: [
                       Text(
                         "Analog Watch",
-                        style: GoogleFonts.oswald(color: kPrimaryColor, fontWeight: FontWeight.w900, fontSize: 16),
+                        style: GoogleFonts.oswald(color: Theme.of(context).primaryColor, fontWeight: FontWeight.w900, fontSize: 16),
                       ),
                       SizedBox(height: 15),
                       Text(
@@ -64,11 +64,10 @@ class WatchAd extends StatelessWidget {
                       SizedBox(height: 10),
                       Text(
                         "Yes! This clock is also written in flutter and has two themes.",
-                        style: TextStyle(
-                          color: kCaptionColor,
-                          height: 1.5,
-                          fontSize: 15,
-                        ),
+                        style: Theme.of(context).textTheme.bodyText1?.copyWith(
+                              height: 1.5,
+                              fontSize: 15,
+                            ),
                       ),
                       SizedBox(height: 25),
                     ],

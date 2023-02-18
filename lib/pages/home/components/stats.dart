@@ -71,10 +71,9 @@ class Stats extends StatelessWidget {
                         ),
                         Text(
                           stat.text,
-                          style: TextStyle(
-                            fontSize: 20,
-                            color: kCaptionColor,
-                          ),
+                          style: Theme.of(context).textTheme.bodyText1?.copyWith(
+                                fontSize: 20,
+                              ),
                         ),
                       ],
                     ),

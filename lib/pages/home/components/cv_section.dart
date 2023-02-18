@@ -94,11 +94,10 @@ class CvSection extends StatelessWidget {
                         SizedBox(height: 15),
                         Text(
                           item.subTitle,
-                          style: TextStyle(
-                            color: kCaptionColor,
-                            height: 1.5,
-                            fontSize: 14,
-                          ),
+                          style: Theme.of(context).textTheme.bodyText2?.copyWith(
+                                height: 1.5,
+                                fontSize: 14,
+                              ),
                         )
                       ],
                     ),

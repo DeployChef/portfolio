@@ -8,9 +8,9 @@ class AppTheme {
     final base = ThemeData.light();
 
     return base.copyWith(
-      primaryColor: kBackgroundColor,
-      accentColor: kPrimaryColor,
-      scaffoldBackgroundColor: kBackgroundColor2,
+      primaryColor: kPrimaryColor3,
+      accentColor: kPrimaryColor3,
+      scaffoldBackgroundColor: kBackgroundColor3,
       colorScheme: const ColorScheme.light(
         secondary: Colors.lightBlue,
         // on light theme surface = Colors.white by default
@@ -22,8 +22,8 @@ class AppTheme {
       accentIconTheme: IconThemeData(color: kAccentIconLightColor),
       primaryIconTheme: IconThemeData(color: Colors.blue),
       textTheme: GoogleFonts.latoTextTheme().copyWith(
-        bodyText1: const TextStyle(color: kBodyTextColorLight),
-        bodyText2: const TextStyle(color: kBodyTextColorLight),
+        bodyText1: const TextStyle(color: Colors.white, fontSize: 15, height: 1),
+        bodyText2: const TextStyle(color: Colors.white, fontSize: 15, height: 1),
         headline4: const TextStyle(color: kBodyTextColorLight, fontSize: 32),
         headline1: const TextStyle(color: Colors.blue, fontSize: 80),
       ),
@@ -49,8 +49,8 @@ class AppTheme {
       accentIconTheme: IconThemeData(color: kAccentIconDarkColor),
       primaryIconTheme: IconThemeData(color: Colors.white),
       textTheme: GoogleFonts.latoTextTheme().copyWith(
-        bodyText1: const TextStyle(color: kBodyTextColorLight),
-        bodyText2: const TextStyle(color: kBodyTextColorLight),
+        bodyText1: const TextStyle(color: kBodyTextColorLight, fontSize: 15, height: 1),
+        bodyText2: const TextStyle(color: kBodyTextColorLight, fontSize: 15, height: 1),
         headline4: const TextStyle(color: kBodyTextColorLight, fontSize: 32),
         headline1: const TextStyle(color: Colors.blue, fontSize: 80),
       ),
