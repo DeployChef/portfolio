@@ -32,7 +32,7 @@ class WorkWith extends StatelessWidget {
       child: Column(
         children: [
           Text(
-            "I have worked for",
+            "I HAVE WORKED FOR",
             style: GoogleFonts.oswald(
               fontWeight: FontWeight.w700,
               fontSize: 32,
